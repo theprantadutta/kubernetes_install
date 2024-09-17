@@ -10,7 +10,7 @@ func ReadySystem() {
 
 	// Running System Update
 	log.Info("Running System Upgrade...")
-	utils.RunCommand("sudo apt update -y && sudo apt upgrade -y")
+	utils.RunCommand("sudo apt-get update -y && sudo apt-get upgrade -y")
 	log.Success("System Upgraded Successfully")
 
 	// Disabling Swap
