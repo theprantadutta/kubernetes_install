@@ -13,7 +13,7 @@ func InstallContainerd() {
 
 	// Install dependencies and containerd
 	utils.RunCommand(`sudo apt-get update`)
-	utils.RunCommand(`sudo apt-get install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates`)
+	utils.RunCommand(`sudo apt-get install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates socat`)
 	utils.RunCommand(`sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg`)
 	utils.RunCommand(`sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"`)
 	utils.RunCommand(`sudo apt-get update`)
