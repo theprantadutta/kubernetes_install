@@ -26,7 +26,7 @@ func InstallKubernetes() {
 
 	// Update apt package index and install Kubernetes components
 	utils.RunCommand(`sudo apt-get update`)
-	utils.RunCommand(`sudo apt-get install -y kubelet=1.30.1-00 kubeadm=1.30.1-00 kubectl=1.30.1-00`)
+	utils.RunCommand(`sudo apt-get install -y kubelet kubeadm kubectl`)
 	utils.RunCommand(`sudo apt-mark hold kubelet kubeadm kubectl`)
 
 	log.Success("Successfully installed Kubernetes with kubelet, kubeadm and kubectl in the system")
