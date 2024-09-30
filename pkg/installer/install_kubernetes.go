@@ -17,11 +17,11 @@ func InstallKubernetes() {
 
 	// Download the public signing key for the Kubernetes package repositories
 	utils.RunCommand(`sudo mkdir -p -m 755 /etc/apt/keyrings`)
-	utils.RunCommand(`curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg`)
+	utils.RunCommand(`curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg`)
 	utils.RunCommand(`sudo chmod 644 /etc/apt/keyrings/kubernetes-apt-keyring.gpg`)
 
 	// Add the Kubernetes apt repository
-	utils.RunCommand(`echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list`)
+	utils.RunCommand(`echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list`)
 	utils.RunCommand(`sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list`)
 
 	// Update apt package index and install Kubernetes components
